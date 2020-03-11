@@ -1,5 +1,5 @@
 <body>
-<script src="http://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
+<script src="https://cdn.highcharts.com.cn/highcharts/highcharts.js"></script>
 <script src="https://img.highcharts.com.cn/highcharts/highcharts-3d.js"></script>
 <div class="am-g">
     <div class="am-u-sm-12">
