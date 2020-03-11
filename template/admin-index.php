@@ -80,7 +80,7 @@ Highcharts.getOptions().colors = $.map(Highcharts.getOptions().colors, function 
 	series: [{
 		name: '户外跑',
 		colorByPoint: true,
-		data: <?php loaddata(); ?>
+		data: [<?php loaddata(); ?>]
 		}]
 });
 // Add mouse events for rotation
