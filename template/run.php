@@ -1,3 +1,95 @@
+<html>
+<head>
+    <input name="height" id="height" type="hidden" value="<?php echo $_SESSION['height']; ?>" />
+    <input name="weight" id="weight" type="hidden" value="<?php echo $_SESSION['weight']; ?>" />
+    <style>
+
+        .holder li {
+            padding: 30px;
+            position: relative;
+            box-sizing: border-box;
+            display: inline-block;
+            width: 33.3333%;
+        }
+        .holder li:after {
+            content: "";
+            opacity: 0.1;
+            -ms-transform: translate(0, -50%);
+            -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+            background-color: #1d2528;
+            position: absolute;
+            height: 40%;
+            width: 1px;
+            right: 0;
+            top: 50%;
+        }
+        .holder li:last-of-type:after {
+            display: none;
+        }
+        .holder h1,
+        h2,
+        label {
+            font-family: "Roboto", sans-serif;
+            text-transform: uppercase;
+        }
+        .holder h1,
+        h2 {
+            color: #fa4248;
+        }
+        .holder h1 {
+            letter-spacing: 0.04em;
+            font-weight: 900;
+            font-size: 60px;
+            text-align:center;
+        }
+        .holder h2 {
+            letter-spacing: 0.07em;
+            font-weight: 300;
+            font-size: 24px;
+            text-align:center;
+        }
+        .holder label {
+            width: 100%;
+            text-align: center;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            display: block;
+            padding: 10px;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="am-g">
+    <div class="am-u-sm-12">
+	<?php loadalert(); ?>
+        <div class="am-panel am-panel-default">
+            <div class="am-panel-bd">
+
+                <div class="holder">
+                    <div class="head">
+                        <h1 name="totalTime" id="totalTime">00:00:00</h1>
+                        <label>运动时长</label>
+                    </div>
+                    <hr>
+                    <h2 name="distance" id="distance">0.00</h2>
+                        <label>公里</label>
+                        <hr>
+                        <h2 name="pace" id="pace">0'0"</h2>
+                        <label>配速</label>
+                        <hr>
+                        <h2 name="kcal" id="kcal">0.00</h2>
+                        <label>卡路里</label>
+                </div>
+                <button class="am-btn am-btn-success am-btn-xl am-btn-block" name="button_start" id="button_start" onclick="start()">开始</button>
+                <button class="am-btn am-btn-danger am-btn-xl am-btn-block" name="button_stop" id="button_stop" onclick="reset()" disabled>结束</button>
+			</div>
+        </div>
+    </div>
+</div>
+</div>
     <script type="text/javascript">
 	$.fn.stringify = function() {
   return JSON.stringify(this);
@@ -191,94 +283,5 @@
             }
         }
     </script>
-    <input name="height" id="height" type="hidden" value="<?php echo $_SESSION['height']; ?>" />
-    <input name="weight" id="weight" type="hidden" value="<?php echo $_SESSION['weight']; ?>" />
-    <style>
-
-        .holder li {
-            padding: 30px;
-            position: relative;
-            box-sizing: border-box;
-            display: inline-block;
-            width: 33.3333%;
-        }
-        .holder li:after {
-            content: "";
-            opacity: 0.1;
-            -ms-transform: translate(0, -50%);
-            -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
-            background-color: #1d2528;
-            position: absolute;
-            height: 40%;
-            width: 1px;
-            right: 0;
-            top: 50%;
-        }
-        .holder li:last-of-type:after {
-            display: none;
-        }
-        .holder h1,
-        h2,
-        label {
-            font-family: "Roboto", sans-serif;
-            text-transform: uppercase;
-        }
-        .holder h1,
-        h2 {
-            color: #fa4248;
-        }
-        .holder h1 {
-            letter-spacing: 0.04em;
-            font-weight: 900;
-            font-size: 60px;
-            text-align:center;
-        }
-        .holder h2 {
-            letter-spacing: 0.07em;
-            font-weight: 300;
-            font-size: 24px;
-            text-align:center;
-        }
-        .holder label {
-            width: 100%;
-            text-align: center;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            display: block;
-            padding: 10px;
-            font-size: 15px;
-        }
-    </style>
-</head>
-
-<body>
-<div class="am-g">
-    <div class="am-u-sm-12">
-	<?php loadalert(); ?>
-        <div class="am-panel am-panel-default">
-            <div class="am-panel-bd">
-
-                <div class="holder">
-                    <div class="head">
-                        <h1 name="totalTime" id="totalTime">00:00:00</h1>
-                        <label>运动时长</label>
-                    </div>
-                    <hr>
-                    <h2 name="distance" id="distance">0.00</h2>
-                        <label>公里</label>
-                        <hr>
-                        <h2 name="pace" id="pace">0'0"</h2>
-                        <label>配速</label>
-                        <hr>
-                        <h2 name="kcal" id="kcal">0.00</h2>
-                        <label>卡路里</label>
-                </div>
-                <button class="am-btn am-btn-success am-btn-xl am-btn-block" name="button_start" id="button_start" onclick="start()">开始</button>
-                <button class="am-btn am-btn-danger am-btn-xl am-btn-block" name="button_stop" id="button_stop" onclick="reset()" disabled>结束</button>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
 </body>
+</html> 
