@@ -11,6 +11,9 @@ function loaddata(){
 		@$z=(int)explode(":",explode(" ",$data['stop_time'])[1])[1];
 		array_push($arr,array($x,$y,$z));
 	}
+	if(count($arr) == 0){
+		array_push($arr,[]);
+	}
 	echo json_encode($arr);
 }
 
